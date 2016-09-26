@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is a Document!</title>
+  </head>
+  <body>
+    <h1>This is a header!</h1>
+    <p id="excitingText">
+      This is a paragraph! <em>Excitement</em>!
+    </p>
+    <p>
+      This is also a paragraph, but it's not nearly as exciting as the last one.
+    </p>
+    <p id="test"></p>
+    <p id="theHTMLTag"></p>
+    <p id="theHeadTag"></p>
+    <p id="theTitleTag"></p>
+    <p id="theHeaderTag"</p>
+    <p id="theExcitingParagraph"></p>
+    <p id="theExcitingParagraph2"></p>
+    <p id="theThirdParagraph"></p>
+    <script>
+    var root = document.documentElement;
+    // querySelector is the same as .getElementsByTagName("h1")[0]
+    var theHeader = document.querySelector("h1");
+    // document.getElementById("theTitleTag").innerHTML = theHeader.textContent;
+
+    // getElementById requires an id to be added to the specified element in the HTML
+    var theFirstP = document.getElementById("excitingText");
+    //document.getElementById("theHTMLTag").innerHTML = theFirstP.textContent;
+
+    var theSecondP = document.getElementsByTagName("p")[0];
+    //document.getElementById("theExcitingParagraph").innerHTML = theSecondP.textContent;
+
+    var root = document.documentElement;
+    //document.getElementById("theThirdParagraph").innerHTML = root.nodeName;
+
+    var theBodyTag = document.querySelector("body");
+    document.getElementById("theExcitingParagraph").innerHTML = theBodyTag.children[0].textContent;
+
+    // Since childNodes do not have an indexOf method, need to use array method
+    var current = theHeader;
+    var index = Array.prototype.indexOf.call(theBodyTag.children, current);
+    var path = [index];
+    // while(theHeader !== root){
+    //   path.unshift(index);
+    //   current = current.parentNode;
+    // }
+    document.getElementById("theTitleTag").innerHTML = path.toString();
+    //document.getElementById("theTitleTag").innerHTML = index;
+    </script>
+  </body>
+</html>

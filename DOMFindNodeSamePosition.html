@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Tree Traversal Question</title>
+  </head>
+  <body>
+    <div id="thediv">
+      <h1 id="header">DOM Tree Manipulation</h1>
+      <p id="question">
+        Given a node from a DOM tree find the node in the same position
+        from an identical DOM tree.
+      </p>
+    </div>
+    <p id="test"></p>
+    <p id="theHTMLTag"></p>
+    <p id="theHeadTag"></p>
+    <p id="theTitleTag"></p>
+    <p id="theHeaderTag"</p>
+    <p id="theExcitingParagraph"></p>
+    <p id="theExcitingParagraph2"></p>
+    <p id="theThirdParagraph"></p>
+    <script> // TODO : FIND TIME COMPLEXTIY OF THIS SOLUTION
+      // http://stackoverflow.com/questions/11032015/how-to-find-time-complexity-of-an-algorithm
+      // PROBLEM: Given a node from a DOM tree find the node in the same position
+      // from an identical DOM tree.
+
+      // Reference: http://stackoverflow.com/questions/19779438/dom-tree-traversal
+      var root = document.documentElement;
+      var body = document.querySelector("body");
+      var div = document.querySelector("div");
+      var header = document.getElementById("header");
+      var paragraph = document.getElementById("question");
+
+
+      var target = header;
+      // Given a node and a tree, extract the node's path
+      function getPath(root, target){
+        var current = target;
+        var path = [];
+        while(current !== root){
+          path.unshift(Array.prototype.indexOf.call(current.parentNode.childNodes, current));
+          current = current.parentNode;
+        }
+        return path;
+      }
+
+
+      // Given the second tree, trace through using the path retrieved by getPath
+      function tracePath(root, path){
+        var current = root;
+        for(var i = 0; i < path.length; i++){
+          current = current.childNodes[path[i]];
+        }
+        return current.textContent;
+      }
+
+      // use both functions to find the node in the same position
+      function getNodeInSamePosition(rootA, rootB, target){
+        return tracePath(rootB, getPath(rootA, target));
+      }
+
+      document.getElementById("test").innerHTML = getNodeInSamePosition(root, root, target);
+
+    </script>
+  </body>
+</html>
