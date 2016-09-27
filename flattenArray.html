@@ -8,16 +8,16 @@
     <p id="excitingText">
       Given a nested array return its flattened structure.
     </p>
-    <p>
-      Given : [[[0]],[[2],[3]]]
-      Output : [0,2,3]
-    </p>
-    <p id="test"></p>
+    <p id="given"></p>
+    <p id="given2"></p>
+    <p id="given3"></p>
     <script>
     // PROBLEM: Given an array, flatten it
     // The time complexity of this function is O(n^2) (O(n)*O(n))
     // Reference: http://stackoverflow.com/questions/27266550/how-to-flatten-nested-array-in-javascript
-    var given = [[[0], [1]], [[2], [3]], [[4], [5]]];
+    var given = [[[0], [1]], [[2], [3]], [[4], [5]]]; // expecting [0,1,2,3,4,5]
+    var given2 = [[[0]],[[2],[3]]]; // expecting [0,2,3]
+    var given3 =  [1, [2, [ [3, 4], 5], 6]]; // expecting [1,2,3,4,5,6]
     // The time complexity for this function will be O(n) for the for loop multiplied by O(n) for the recursive call
     function flatten(givenArray){
       var flatArray = [];
@@ -32,7 +32,10 @@
       return flatArray;
     }
 
-    document.getElementById("test").innerHTML = flatten(given);
+    document.getElementById("given").innerHTML = flatten(given);
+    document.getElementById("given2").innerHTML = flatten(given2);
+    document.getElementById("given3").innerHTML = flatten(given3);
+
     </script>
   </body>
 </html>
