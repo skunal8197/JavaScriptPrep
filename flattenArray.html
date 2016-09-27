@@ -11,7 +11,7 @@
     <p id="given"></p>
     <p id="given2"></p>
     <p id="given3"></p>
-    <script>
+    <script> // TODO : check on http://www.jslint.com/ for code style
     // PROBLEM: Given an array, flatten it
     // The time complexity of this function is O(n^2) (O(n)*O(n))
     // Reference: http://stackoverflow.com/questions/27266550/how-to-flatten-nested-array-in-javascript
@@ -21,7 +21,9 @@
     // The time complexity for this function will be O(n) for the for loop multiplied by O(n) for the recursive call
     function flatten(givenArray){
       var flatArray = [];
-      for(var i = 0; i < givenArray.length; i++){
+      var length = givenArray.length; // prevent .length from being called each time the loop is iterated
+      var i;
+      for(i = 0; i < length; i++){
         if(Array.isArray(givenArray[i])){
           flatArray = flatArray.concat(flatten(givenArray[i]));
         }
