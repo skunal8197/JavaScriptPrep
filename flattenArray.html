@@ -15,9 +15,10 @@
     <p id="test"></p>
     <script>
     // PROBLEM: Given an array, flatten it
-    //
+    // The time complexity of this function is O(n^2) (O(n)*O(n))
     // Reference: http://stackoverflow.com/questions/27266550/how-to-flatten-nested-array-in-javascript
     var given = [[[0], [1]], [[2], [3]], [[4], [5]]];
+    // The time complexity for this function will be O(n) for the for loop multiplied by O(n) for the recursive call
     function flatten(givenArray){
       var flatArray = [];
       for(var i = 0; i < givenArray.length; i++){
