@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>This is a Document!</title>
+    <title>Flatten Array</title>
   </head>
   <body>
-    <h1>This is a header!</h1>
+    <h1>Flatten Array Problem</h1>
     <p id="excitingText">
-      This is a paragraph! <em>Excitement</em>!
+      Given a nested array return its flattened structure.
     </p>
     <p>
-      This is also a paragraph, but it's not nearly as exciting as the last one.
+      Given : [[[0]],[[2],[3]]]
+      Output : [0,2,3]
     </p>
+    <p id="test"></p>
     <script>
+    // PROBLEM: Given an array, flatten it
+    //
+    // Reference: http://stackoverflow.com/questions/27266550/how-to-flatten-nested-array-in-javascript
+    var given = [[[0], [1]], [[2], [3]], [[4], [5]]];
+    function flatten(givenArray){
+      var flatArray = [];
+      for(var i = 0; i < givenArray.length; i++){
+        if(Array.isArray(givenArray[i])){
+          flatArray = flatArray.concat(flatten(givenArray[i]));
+        }
+        else{
+          flatArray.push(givenArray[i]);
+        }
+      }
+      return flatArray;
+    }
 
-    // http://stackoverflow.com/questions/27266550/how-to-flatten-nested-array-in-javascript
-
-
+    document.getElementById("test").innerHTML = flatten(given);
     </script>
   </body>
 </html>
