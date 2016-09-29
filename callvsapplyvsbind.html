@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>.call() vs .apply() vs bind()</title>
+  </head>
+  <body>
+    <h1>This is an example of a closure.</h1>
+    <p id="given"></p>
+    <p id="given2"></p>
+    <p id="given3"></p>
+    <p id="given4"></p>
+
+    <script>
+
+    /* The following function is provided to give an example of
+    .call() vs . apply() vs .bind(). */
+
+
+    var theObject = {num:2};
+    var addToThis = function(a,b,c){
+      return this.num + a + b + c;
+    }
+
+    var theArray = [1,2,3];
+
+    // .call() takes in the object and then the given functions' parameters
+    document.getElementById("given2").innerHTML = addToThis.call(theObject, 1, 2, 3);
+
+    // .apply() takes in the object and then the given functions' parameters IN AN ARRAY
+    document.getElementById("given3").innerHTML = addToThis.apply(theObject, theArray);
+
+    // .bind() binds a function to a given object and returns another function
+
+    </script>
+  </body>
+</html>
