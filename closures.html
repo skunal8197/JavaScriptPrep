@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Closures</title>
+  </head>
+  <body>
+    <h1>This is an example of a closure.</h1>
+    <p id="given"></p>
+    <p id="given2"></p>
+    <p id="given3"></p>
+    <p id="given4"></p>
+
+    <script>
+
+    /* A closure is a way to access private variables in a JavaScript
+    function outside of the scope of the variable.
+
+    The convention for a closure is to declare a function within a function
+    which will return a variable that has been set equal to the parameter.
+
+    To access this private variable (which is denoted by an _ before the name),
+    one must call this internal function.
+
+    Two examples are provided below.
+    */
+
+    // Example 1
+    function Person(pName){
+      this.getName = function(){
+        return pName;
+      }
+    }
+    var me = new Person("hello world");
+    document.getElementById("given").innerHTML = me.getName();
+
+
+    // Example 2
+    function showName(firstName, lastName){
+      this.getFullName = function(){
+        return "Your full name is " + firstName + " " + lastName;
+      }
+    }
+
+    var myFullName = new showName("Kunal", "Shah");
+    document.getElementById("given2").innerHTML = myFullName.getFullName();
+
+
+    </script>
+    </body>
+</html>
