@@ -1,0 +1,6 @@
+What is the difference between classes and IDs in CSS?
+- classes are used to style a group of elements that are given a specific class tag in HTML
+- ids are used for styling a specific element
+
+What is the difference between "resetting" and "normalizing" in CSS? Which would you choose and why?
+- resetting is used 
