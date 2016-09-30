@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Questions</title>
+  </head>
+  <body>
+    <!-- Reference: https://github.com/h5bp/Front-end-Developer-Interview-Questions -->
+    <h1 align="center">This is a list of compiled CSS Questions and Answers.</h1>
+
+    <h3>What is the difference between classes and IDs in CSS?</h3>
+    <p1>- Classes are used to style a group of elements that are given a specific class tag in HTML.<br>
+    - IDs are used for styling a specific element.</p1>
+
+    <h3>What is the difference between "resetting" and "normalizing" in CSS? Which would you choose and why?</h3>
+    <p1>- Reset will remove all default styling applied by the browser giving you a blank canvas.<br>
+    - Normalize will give you a base stylesheet and styles default elements to be consistent across
+    various different browsers.<br> - Personally, I would use normalize.css more because it has become more of an industry standard
+    at this point. Normalize.css is also made with HTML5 in mind which makes it all that easier to
+    keep up with modern standards in web development.</p1>
+
+    <h3>What is a float and when would you use it?</h3>
+    <p1>- "Float" is a CSS positioning property that helps images properly wrap around text. Floats can be
+    set to right or left which positions the element to wrap around the text in that respective position.</p>
+
+    <h3>Describe z-index and how stacking context is formed.</h3>
+    <p1>- The z-index determines the order in which different elements are vertically stacked.<br>
+    - It only affects elements that have a position value other than static (the default).<br>
+    - Without the z-index, the elements vertically stack as they appear in the DOM.</p1>
+
+    <h3>Describe Block Formattting Context (BFC) and how it works.</h3>
+    <p1>- A BFC is defined as an HTML box where
+      <ul>
+        <li>float : none </li>
+        <li>position : fixed | absolute</li>
+        <li>display : table-cell | table-caption | inline-block | inline-flex</li>
+        <li> overflow : hidden </li>
+      </ul>
+    </p1>
+
+
+    <h3>What are the various clearing techniques and which is appropriate for what context?</h3>
+    <p1>- Clearing floats forces the containing element to expand to contain its child elements.
+    It essentially forces its child elements to appear below it.<br>
+    - There are four ways to clear floats.
+    <ul>
+      <li>.clear {clear: both;}</li>
+      <li>.container{overflow:hidden;}</li>
+      <li>.clearfix uses the pseudo-elements ::before and ::after. The ::after element is used to clear
+        the floats.</li>
+      <li>(the newest way).container{min-height: contain-floats;}</li>
+    </ul>
+    </p1>
+
+    <h3>Explain CSS sprites and how you would implement them.</h3>
+    <p1>- CSS Sprites are basically taking multiple images, making them into one image, and displaying
+    only part of that large image at a time.<br>
+    - Although the total image size goes up, several images are able to load with a single HTTP request.<br>
+    - The traditional way of using CSS sprites is setting the same background-image on several CSS classes
+    and using the background-position and dimensions of the individual classes to display a single portion
+    of the sprite.<br>
+    - Another way to use CSS Sprites is to use several frameworks such as Node.js, Compass, Grunt, Gulp, etc.
+    </p1>
+
+    <h3></h3>
+
+
+
+
+
+    <style>
+    br{
+      line-height: 2.0;
+    }
+
+    </style>
+
+    </body>
+</html>
