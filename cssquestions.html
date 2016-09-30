@@ -12,6 +12,59 @@
     <p1>- Classes are used to style a group of elements that are given a specific class tag in HTML.<br>
     - IDs are used for styling a specific element.</p1>
 
+    <h3>What is the difference between block, inline, and inline-block?</h3>
+    <p1> Block Elements:
+      <ul>
+        <li>respect left, right, top and bottom margins and padding</li>
+        <li>force a line break after each block element</li>
+        <li id="picture"><img src="blockelements.png"></li>
+      </ul>
+      <br>Inline Elements:
+      <ul>
+        <li>respect left and right margins and padding but <strong> not </strong> top and bottom</li>
+        <li><strong>cannot</strong> have a width and height set</li>
+        <li>allow other elements to sit to their left and right </li>
+        <li id="picture"><img src="inline.png"></li>
+      </ul>
+      <br>Inline-block Elements:
+      <ul>
+        <li>allow other elements to sit to their left and right</li>
+        <li>respect top and bottom margins and padding</li>
+        <li>respect height and width</li>
+        <li id="picture"><img src="inlineblock.png"></li>
+      </ul>
+    </p1>
+
+    <h3>What's the difference between a relative, fixed, absolute and statically positioned element?</h3>
+    <p1>Static (default)
+      <ul>
+        <li>not affected by the top, bottom, left, and right properties</li>
+        <li>always positioned according to the normal flow of the page</li>
+      </ul>
+      <br>Relative
+      <ul>
+        <li>This type of positioning needs to be complemented with some sort of positioning attribute.
+        Otherwise, it will stay as if the element is statically positioned.</li>
+        <li>If you do have some other positioning attribute such as top: 10px, it will move the
+          elements position <strong>DOWN</strong> 10px.</li>
+        <li>Elemenets that are positioned relatively have the ability to use the z-index on that element.</li>
+      </ul>
+      <br> Fixed
+      <ul>
+        <li>A fixed element stays where it is relative to the viewpoint (browser window itself)</li>
+        <li>For example, a fixed element will stay where it is even when the page is scrolled </li>
+      </ul>
+      <br>Absolute
+      <ul>
+        <li>This type of positioning allows you put the element where ever you wish by using the positioning
+          attributes <strong>top, left, bottom, and right</strong></li>
+        <li>This element is bound to its next parent so these positioning attribute values will be positioned
+          relative to its next parent with relative or absolute positioning. If no such parent exists, this
+          element will be positioned relative to the entire page itself.</li>
+        <li>Elements that are positioned absolutely are removed from the flow of the page and are not affected
+          by other elements. These elements also do not affect any other elements on the page.</li>
+        </ul>
+    </p1>
     <h3>What is the difference between "resetting" and "normalizing" in CSS? Which would you choose and why?</h3>
     <p1>- Reset will remove all default styling applied by the browser giving you a blank canvas.<br>
     - Normalize will give you a base stylesheet and styles default elements to be consistent across
@@ -62,7 +115,25 @@
     - Another way to use CSS Sprites is to use several frameworks such as Node.js, Compass, Grunt, Gulp, etc.
     </p1>
 
-    <h3></h3>
+    <h3>Image Replacement Techniques</h3>
+    <p1> CSS Image Replacement is a technique of replacing a text element (usually a header tag)
+      with an image. The most common usage of this technique is to display a logo on a page.<br>
+      Phark Method
+      <ul>
+        <li>- This method is used by replacing the block with a background image
+          and kicking the text off the page with an indedent.</li>
+          <li>- This is the most widely used technique today and keeps screen
+            readers happy</li>
+        </ul>
+      <br>FIR (Fahrner Image Replacement)
+      <ul>
+        <li>- FIR is a technique that uses a span to wrap the text inside the header
+          and use the span to hide the text.</li>
+        <li>- Since we use display: none property, this hides the text from screen
+          readers and search bots</li>
+        </ul>
+    </p1>
+
 
 
 
@@ -71,6 +142,9 @@
     <style>
     br{
       line-height: 2.0;
+    }
+    #picture{
+      list-style-type: none;
     }
 
     </style>
